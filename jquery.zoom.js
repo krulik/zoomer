@@ -35,9 +35,9 @@
 	
 	$.fn.zoomer = function (options) {
 
-        // Defaults:
-        var settings = {
-		            			
+		// Defaults:
+		var settings = {
+								
 			ratio: 0.4,
 			previewWidth: 431,
 			previewHeight: 497,
@@ -67,7 +67,7 @@
 			
 			className: "zoom",
 			container: null
-        };
+		};
 
 		// Some ugly browser detection:
 		var version = parseFloat($.browser.version);
@@ -250,23 +250,23 @@
 
 		// Hack for IE7 (otherwise, the preview will not be rendered until a mouse over)
 		function ie7wake (iframe) {
-          
-            iframe = $(iframe);
-          
-            // Don't run over existing CSS
-            var style = iframe.attr("style") || "";
-            iframe.css("visibility", "hidden");
-            iframe.css("visibility", "visible");			
-            
-            iframe.attr("style", style);			
+		
+			iframe = $(iframe);
+		
+			// Don't run over existing CSS
+			var style = iframe.attr("style") || "";
+			iframe.css("visibility", "hidden");
+			iframe.css("visibility", "visible");			
+			
+			iframe.attr("style", style);			
 		}
 
 		// Plugin code, return jQuery collection
-        return this.each(function () {
-            
+		return this.each(function () {
+			
 			if (options) {
-                $.extend(settings, options);
-            }
+				$.extend(settings, options);
+			}
 
 			var iframe = $(this);
 			
@@ -282,8 +282,8 @@
 			zoom(iframe);
 			browser.ie7 && ie7wake(iframe);
 
-        }); // return
+		}); // return
 
-    }; // zoomer
+	}; // zoomer
 
 })(jQuery);
