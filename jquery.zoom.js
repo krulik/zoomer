@@ -250,17 +250,15 @@
 
 		// Hack for IE7 (otherwise, the preview will not be rendered until a mouse over)
 		function ie7wake (iframe) {
-
-			if (browser.ie7) {
-				iframe = $(iframe);
-
-				// Don't run over existing CSS
-				var style = iframe.attr("style") || "";
-				iframe.css("visibility", "hidden");
-				iframe.css("visibility", "visible");			
-
-				iframe.attr("style", style);
-			}
+          
+            iframe = $(iframe);
+          
+            // Don't run over existing CSS
+            var style = iframe.attr("style") || "";
+            iframe.css("visibility", "hidden");
+            iframe.css("visibility", "visible");			
+            
+            iframe.attr("style", style);			
 		}
 
 		// Plugin code, return jQuery collection
@@ -282,7 +280,7 @@
 			settings.contentHeight = settings.contentHeight || settings.defaultHeight;				
 			initContainer(iframe);
 			zoom(iframe);
-			ie7wake(iframe);
+			browser.ie7 && ie7wake(iframe);
 
         }); // return
 
